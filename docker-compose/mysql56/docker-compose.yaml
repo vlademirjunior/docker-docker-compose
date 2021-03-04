@@ -1,0 +1,14 @@
+version: "2"
+services:
+  mysql:
+    image: mysql:5.6
+    volumes:
+      - $HOME/docker-databases/mysql56-db:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=db_your_project
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - 3306:3306
+volumes:
+  dbdata:
+    driver: local
